@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About me</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("images/iron.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .navbar {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8px;
+      background: #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(105, 93, 93, 0.938);
+      background: rgba(51, 51, 51, 0.5);
+    }
+    .navbar .logo {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar .logo:hover {
+  color: #ff9800;  
+  cursor: pointer; 
+}
+
+    .navbar nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #ff9800;
+    }
+    .about {
+      padding-top: 100px;
+      text-align: center; 
+    }
+    .about h1 {
+      text-align:center;
+      font-size: 40px;
+      margin-bottom: 80px;
+      color: white;
+      background:#7d2404; 
+      padding:15px 25px;
+      border-radius:12px;
+      display:inline-block;
+      box-shadow:0 5px 15px rgba(237, 230, 230, 0.855);
+    }
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 50px;
+    }
+    .about-text {
+      flex: 1;
+      max-width: 500px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #efefef;
+    }
+    .about-text h4 {
+      line-height: 1.9;   
+      margin-bottom: 30px;
+    }
+    .resume-button {
+      margin-top: 25px;
+    }
+    .resume-button a {
+      display: inline-block;
+      margin-right: 15px;
+      padding: 12px 25px;
+      background: #843906;
+      color: white;
+      text-decoration:none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+      transition: 0.3s ease;
+    }
+    .resume-button a:hover {
+      background: #662323;
+      transform: scale(1.05);
+    }
+    .about-box {
+      width: 800px;
+      max-width: 1000px;
+      color: #ffffff;
+      margin: auto;
+      background: rgba(65, 60, 60, 0.7);
+      padding: 40px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(119, 112, 112, 0.358);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(3px);
+    }
+    .about-box:hover {
+      transform: translateY(5px);
+      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.933);
+    }
+    .about-box h2 {
+      margin-bottom: 20px;
+      color: #ad4612;
+      font-size: 24px;
+    }
+    .about-box p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #ef971b;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+      box-shadow: #bd0707;
+       box-shadow: 0 -5px 15px rgba(157, 141, 141, 0.908);
+     background: rgba(34, 34, 34, 0.5); 
+    }
+    footer .social-icons img {
+      width: 28px; 
+      height: 28px;
+      margin: 0 8px;
+      border-radius: 5px;
+      transition: transform 0.3s;
+    }
+    footer .social-icons img:hover {
+      transform: scale(1.2);  
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">PORTFOLIO</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="container">
+       <h1>About Me</h1>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <div class="about-box">
+          <h2>Hello Everyone, I'm Mugunthan</h2>
+          <p>
+            From the very beginning of my Computer Science journey, I have been curious about 
+            how technology can solve real-world problems. When I first started learning 
+            programming, I was fascinated by how just a few lines of code could bring 
+            something to life on a screen. That curiosity gradually led me to Python, 
+            where I built my foundation and strengthened my understanding of programming. 
+            While I haven’t yet applied it extensively in real-world projects, my goal is 
+            clear — to become a skilled <b>Python Developer</b>.
+          </p>
+          <p>
+            Along the way, I discovered the thrill of hackathons, where ideas transform into 
+            solutions under pressure. These experiences taught me valuable lessons in 
+            teamwork, creativity, and confident presentation. My journey has also introduced 
+            me to various technologies such as <b>C, SQL, HTML, CSS, JavaScript, and Java</b>, 
+            each of which has added new layers to my learning and growth.
+          </p>
+          <p>
+            Today, I see myself not as someone who knows everything, but as someone who is 
+            passionate about learning, experimenting, and improving step by step. Every 
+            project I build, every hackathon I attend, and every challenge I face brings me 
+            closer to turning my dream into reality.
+          </p>
+        </div>
+        <div class="resume-button">
+          <a href="resume.pdf" target="_blank">View Resume</a>
+          <a href="resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h4>Connect me within</h4>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/mugunthan-s-6a033a36b" target="_blank">
+        <img src="images/linkedin.jpg" alt="LinkedIn"></a>
+      <a href="https://github.com/Mugunthan56" target="_blank">
+        <img src="images/github.png" alt="GitHub"></a>
+      <a href="mailto:mugunthanmugunthan644@gmail.com">
+        <img src="images/email.jpg" alt="Email"></a>
+    </div>
+    <p>© 2025 Mugunthan. All rights reserved.</p>
+  </footer>
+</body>
+</html>
