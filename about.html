@@ -6,7 +6,7 @@
   <title>About me</title>
   <link rel="stylesheet" href="style.css">
   <style>
-   body {
+    body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url("images/iron.jpg") no-repeat center center fixed;
@@ -17,36 +17,34 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 8px;
-      background: #333;
+      background: rgba(51, 51, 51, 0.5);
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(105, 93, 93, 0.938);
-      background: rgba(51, 51, 51, 0.5);
     }
-    .navbar .logo {
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .navbar .logo:hover {
-  color: #ff9800;  
-  cursor: pointer; 
+   .navbar nav {
+  display: flex;
+  gap: 49px;
+  margin-right: 20px;
 }
-
-    .navbar nav a {
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #ff9800;
+}
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
       color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    .navbar nav a:hover,
-    .navbar nav a.active {
-      color: #ff9800;
     }
     .about {
       padding-top: 100px;
@@ -130,15 +128,33 @@
       color: #ef971b;
     }
 
+    .skills-btn {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .skills-btn a{
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background: linear-gradient(90deg, #ba3a07, #d18a0f);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(11, 143, 214, 0.5);
+      transition: all 0.3s ease;
+    }
+    .skills-btn a:hover {
+      transform: scale(1.1);
+    }
+
     footer {
-      background: #222;
+      background: rgba(34, 34, 34, 0.5); 
       color: white;
       text-align: center;
       padding: 15px 0;
       margin-top: 50px;
-      box-shadow: #bd0707;
-       box-shadow: 0 -5px 15px rgba(157, 141, 141, 0.908);
-     background: rgba(34, 34, 34, 0.5); 
+      box-shadow: 0 -5px 15px rgba(157, 141, 141, 0.908);
     }
     footer .social-icons img {
       width: 28px; 
@@ -150,13 +166,39 @@
     footer .social-icons img:hover {
       transform: scale(1.2);  
     }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .navbar nav {
+    display: none; /* hide by default */
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    gap: 15px; /* spacing between menu links */
+  }
+  .navbar nav.show {
+    display: flex;
+  }
+  .navbar nav a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+}
   </style>
 </head>
 <body>
   <header>
     <div class="navbar">
       <div class="logo">PORTFOLIO</div>
-      <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
         <a href="skills.html">Skills</a>
@@ -196,6 +238,9 @@
             project I build, every hackathon I attend, and every challenge I face brings me 
             closer to turning my dream into reality.
           </p>
+          <div class="skills-btn">
+            <a href="skills.html">Skills</a>
+          </div>
         </div>
         <div class="resume-button">
           <a href="resume.pdf" target="_blank">View Resume</a>
@@ -217,5 +262,11 @@
     </div>
     <p>© 2025 Mugunthan. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
