@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mugunthan | Skills</title>
   <link rel="icon" type="image/png" href="images/logo.png">
-
   <style>
     body {
       margin: 0;
@@ -14,51 +13,97 @@
       background-size: cover;
       color: #fff;
     }
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8px;
-  background: rgba(51, 51, 51, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(105, 93, 93, 0.938);
-}
-    nav {
+
+    /* 🔹 Navbar */
+    .navbar {
       display: flex;
-      gap: 49px;
-      margin-right: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(51, 51, 51, 0.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(105, 93, 93, 0.9);
     }
+
     .logo {
       font-size: 20px;
       font-weight: bold;
       color: rgb(215, 211, 211);
       transition: 0.3s;
-      margin-left: 10px;
     }
+
     .logo:hover,
     .logo.active {
       color: rgb(248, 1, 1);
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-size: 16px;
-      transition:all 0.3s ease;
+      transition: all 0.3s ease;
     }
+
     nav a:hover,
     nav a.active {
-      color: #0bf8f0; 
+      color: #0bf8f0;
     }
+
+    /* 🔹 Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    /* 🔹 Responsive for Mobile */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: rgba(51, 51, 51, 0.95);
+        width: 200px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* 🔹 Content */
     .content {
       margin-top: 120px;
       text-align: center;
       padding: 40px;
     }
+
     .content h1 {
       font-size: 34px;
       color: #9d2020;
@@ -69,6 +114,7 @@
       display: inline-block;
       border-radius: 8px;
     }
+
     .skills-box {
       max-width: 800px;
       margin: 0 auto;
@@ -76,39 +122,44 @@
       background: rgba(60, 56, 56, 0.4);
       border-radius: 25px;
       box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+      text-align: left;
     }
 
     .skills-box h2 {
       font-size: 24px;
       color: #0026d1;
-      margin-bottom: 20px;
-      text-align: left;
+      margin-bottom: 15px;
       border-bottom: 2px solid #ff9800;
       display: inline-block;
       padding-bottom: 5px;
-      display: block;
-      margin-left: 0;
     }
+
+    .skills-box h3 {
+      margin-top: 20px;
+      color: #f1f1f1;
+    }
+
     .skill {
       display: flex;
       align-items: center;
-      margin: 18px 0;
+      margin: 15px 0;
       font-size: 18px;
       color: #fff;
     }
+
     .skill span {
       flex: 1;
-      text-align: left;
     }
+
     .progress {
       flex: 2;
       height: 18px;
       background: rgba(255, 255, 255, 0.2);
       border-radius: 10px;
-
       overflow: hidden;
       margin-left: 20px;
     }
+
     .progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #aa0a07, #ff9800);
@@ -116,40 +167,51 @@
       border-radius: 10px;
       position: relative;
     }
-    .progress-bar .percent{
+
+    .progress-bar .percent {
       position: absolute;
       right: 5px;
       top: 50%;
       transform: translateY(-50%);
-      color:#fff;
+      color: #fff;
       font-weight: bold;
       font-size: 14px;
     }
+
+    /* 🔹 Footer */
     footer {
-      background: rgba(51, 51, 51, 0.6);
+      background: rgba(51, 51, 51, 0.7);
       color: white;
       text-align: center;
       padding: 20px 0;
       margin-top: 50px;
       box-shadow: 0 1px 5px rgb(105, 213, 255);
     }
+
     footer .social-icons img {
-      width: 28px; 
+      width: 28px;
       height: 28px;
       margin: 0 8px;
       border-radius: 5px;
       transition: transform 0.3s;
     }
+
     footer .social-icons img:hover {
-      transform: scale(1.2);  
+      transform: scale(1.2);
     }
   </style>
 </head>
 <body>
+  <!-- 🔹 Navbar -->
   <header>
     <div class="navbar">
       <div class="logo">PORTFOLIO</div>
-      <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="skills.html" class="active">Skills</a>
@@ -158,109 +220,77 @@
       </nav>
     </div>
   </header>
+
+  <!-- 🔹 Content -->
   <div class="content">
     <h1>My Skills</h1>
     <div class="skills-box">
       <h2><b>Technical Skills</b></h2>
-      <h3><b>Front-End Development</b></h3>
-      <div class="skill">
-        <span>HTML / CSS</span>
-        <div class="progress"><div class="progress-bar" data-percent="75">
-          <span class="percent">0%</span>
-        </div></div>
+
+      <h3>Front-End Development</h3>
+      <div class="skill"><span>HTML / CSS</span>
+        <div class="progress"><div class="progress-bar" data-percent="75"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>JavaScript</span>
-        <div class="progress"><div class="progress-bar" data-percent="40">
-          <span class="percent">0%</span>
-        </div></div>
+      <div class="skill"><span>JavaScript</span>
+        <div class="progress"><div class="progress-bar" data-percent="40"><span class="percent">0%</span></div></div>
       </div>
-      <h3><b>Back-End Development</b></h3>
-      <div class="skill">
-        <span>Python</span>
-        <div class="progress"><div class="progress-bar" data-percent="75">
-          <span class="percent">0%</span>
-        </div></div>
+
+      <h3>Back-End Development</h3>
+      <div class="skill"><span>Python</span>
+        <div class="progress"><div class="progress-bar" data-percent="75"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>C</span>
-        <div class="progress"><div class="progress-bar"data-percent="65">
-          <span class="percent">0%</span>
-        </div></div>
+      <div class="skill"><span>C</span>
+        <div class="progress"><div class="progress-bar" data-percent="65"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>Java</span>
-        <div class="progress"><div class="progress-bar" data-percent="50">
-          <span class="percent">0%</span>
-        </div></div>
+      <div class="skill"><span>Java</span>
+        <div class="progress"><div class="progress-bar" data-percent="50"><span class="percent">0%</span></div></div>
       </div>
-      <h3><b>DataBase</b></h3>
-      <div class="skill">
-        <span>MySQL</span>
-        <div class="progress"><div class="progress-bar" data-percent="60">
-          <span class="percent">0%</span>
-        </div></div>
+
+      <h3>Database</h3>
+      <div class="skill"><span>MySQL</span>
+        <div class="progress"><div class="progress-bar" data-percent="60"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>MongoDB</span>
-        <div class="progress"><div class="progress-bar" data-percent="50">
-          <span class="percent">0%</span>
-        </div></div>
+      <div class="skill"><span>MongoDB</span>
+        <div class="progress"><div class="progress-bar" data-percent="50"><span class="percent">0%</span></div></div>
       </div>
-      <h3><b>Version Control</b></h3>
-      <div class="skill">
-        <span>Git & GitHub</span>
-        <div class="progress"><div class="progress-bar" data-percent="60">
-          <span class="percent">0%</span>
-        </div></div>
+
+      <h3>Version Control</h3>
+      <div class="skill"><span>Git & GitHub</span>
+        <div class="progress"><div class="progress-bar" data-percent="60"><span class="percent">0%</span></div></div>
       </div>
-      <h3><b>IDE / Editors</b></h3>
-       <div class="skill">
-        <span>Visual Studio</span>
-        <div class="progress"><div class="progress-bar" data-percent="80">
-          <span class="percent">0%</span>
-        </div></div>
+
+      <h3>IDE / Editors</h3>
+      <div class="skill"><span>Visual Studio</span>
+        <div class="progress"><div class="progress-bar" data-percent="80"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>Eclipse</span>
-        <div class="progress"><div class="progress-bar" data-percent="60">
-          <span class="percent">0%</span>
-        </div></div>
+      <div class="skill"><span>Eclipse</span>
+        <div class="progress"><div class="progress-bar" data-percent="60"><span class="percent">0%</span></div></div>
       </div>
-       <h3><b>Design Tools</b></h3>
-       <div class="skill">
-        <span>Figma / Canva </span>
-        <div class="progress"><div class="progress-bar" data-percent="80">
-          <span class="percent">0%</span>
-        </div></div>
+
+      <h3>Design Tools</h3>
+      <div class="skill"><span>Figma / Canva</span>
+        <div class="progress"><div class="progress-bar" data-percent="80"><span class="percent">0%</span></div></div>
       </div>
+
       <h2><b>Non-Technical Skills</b></h2>
-      <div class="skill">
-        <span>Problem Solving</span>
-        <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+      <div class="skill"><span>Problem Solving</span>
+        <div class="progress"><div class="progress-bar" data-percent="85"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>Teamwork</span>
-        <div class="progress"><div class="progress-bar" style="width: 80%;">
-          <span class="percent">80%</span>
-        </div></div>
+      <div class="skill"><span>Teamwork</span>
+        <div class="progress"><div class="progress-bar" data-percent="80"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>Communication</span>
-        <div class="progress"><div class="progress-bar" style="width: 70%;">
-          <span class="percent">70%</span>
-        </div></div>
+      <div class="skill"><span>Communication</span>
+        <div class="progress"><div class="progress-bar" data-percent="70"><span class="percent">0%</span></div></div>
       </div>
-      <div class="skill">
-        <span>Time Management</span>
-        <div class="progress"><div class="progress-bar" style="width: 75%;">
-          <span class="percent">75%</span>
-        </div></div>
+      <div class="skill"><span>Time Management</span>
+        <div class="progress"><div class="progress-bar" data-percent="75"><span class="percent">0%</span></div></div>
       </div>
     </div>
   </div>
+
+  <!-- 🔹 Footer -->
   <footer>
-    <h4>Connect me within</h4>
+    <h4>Connect with me</h4>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/mugunthan-s-6a033a36b" target="_blank">
         <img src="images/linkedin.jpg" alt="LinkedIn"></a>
@@ -271,27 +301,31 @@
     </div>
     <p>© 2025 Mugunthan. All rights reserved.</p>
   </footer>
+
+  <!-- 🔹 Script -->
   <script>
-  window.addEventListener("load", () => {
-    document.querySelectorAll(".progress-bar").forEach(bar => {
-      let percent = bar.getAttribute("data-percent");
-      let percentText = bar.querySelector(".percent");
-      let width = 0;
-      let count = 0;
+    // Navbar toggle
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
 
-      let interval = setInterval(() => {
-        if (width >= percent) {
-          clearInterval(interval);
-        } else {
-          width++;
-          bar.style.width = width + "%";
-          percentText.textContent = width + "%";
-        }
-      }, 20);
+    // Animate progress bars
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".progress-bar").forEach(bar => {
+        let percent = bar.getAttribute("data-percent");
+        let percentText = bar.querySelector(".percent");
+        let width = 0;
+        let interval = setInterval(() => {
+          if (width >= percent) {
+            clearInterval(interval);
+          } else {
+            width++;
+            bar.style.width = width + "%";
+            percentText.textContent = width + "%";
+          }
+        }, 20);
+      });
     });
-  });
-</script>
-
-
+  </script>
 </body>
 </html>
