@@ -82,10 +82,12 @@
     }
     .resume-button {
       margin-top: 25px;
+      text-align: left;
+      margin-left: 300px;
     }
     .resume-button a {
       display: inline-block;
-      margin-right: 15px;
+      margin: 0 12px;
       padding: 12px 25px;
       background: #843906;
       color: white;
@@ -131,10 +133,13 @@
     .skills-btn {
       text-align: center;
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
     }
     .skills-btn a{
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 30px;
       margin: 5px;
       background: linear-gradient(90deg, #ba3a07, #d18a0f);
       color: #fff;
@@ -166,14 +171,12 @@
     footer .social-icons img:hover {
       transform: scale(1.2);  
     }
-
-    /* Mobile View */
     @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
   .navbar nav {
-    display: none; /* hide by default */
+    display: none;
     flex-direction: column;
     background: rgba(17, 17, 17, 0.95);
     position: absolute;
@@ -181,7 +184,7 @@
     right: 20px;
     padding: 15px;
     border-radius: 8px;
-    gap: 15px; /* spacing between menu links */
+    gap: 15px; 
   }
   .navbar nav.show {
     display: flex;
@@ -203,7 +206,7 @@
         <a href="about.html" class="active">About</a>
         <a href="skills.html">Skills</a>
         <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+        <a href="contacts.html">Contacts</a>
       </nav>
     </div>
   </header>
@@ -240,14 +243,18 @@
           </p>
           <div class="skills-btn">
             <a href="skills.html">Skills</a>
+          <div class="projects-btn">
+            <a href="projects.html">projects</a>
           </div>
-        </div>
-        <div class="resume-button">
-          <a href="Resume.pdf" target="_blank">View Resume</a>
-          <a href="Resume.pdf" download>Download Resume</a>
+          </div>
+          </div>
         </div>
       </div>
     </div>
+     <div class="resume-button">
+          <a href="Resume.pdf" target="_blank">View Resume</a>
+          <a href="Resume.pdf" download>Download Resume</a>
+        </div>
   </section>
 
   <footer>
