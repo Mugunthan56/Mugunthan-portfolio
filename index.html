@@ -172,7 +172,7 @@
       .navbar {
         flex-direction: column;
         align-items: flex-start;
-        padding: 10px;
+        padding: 20px;
       }
       nav {
         flex-direction: column;
@@ -223,6 +223,46 @@
     .about-btn {
   text-align: center;
   margin-top: 20px;
+}
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+  nav {
+    gap: 5px;
+  }
+  nav a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .content {
+    padding: 10px;
+    margin-top: 80px;
+  }
+  .text-box {
+    margin-bottom: 20px;
+  }
+}
+.highlight-box {
+  width: 100%;
+  max-width: 700px;
+}
+@media screen and (max-width: 480px) {
+  .image-box img {
+    width: 120px;
+    border-radius: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  footer .social-icons img {
+    margin: 5px;
+  }
 }
 
 .about-btn a {
